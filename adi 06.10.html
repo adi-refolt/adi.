@@ -1,0 +1,195 @@
+```html
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GitHub Web Sync Practice</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            color: #222;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 60px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #24292f;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .info {
+            background: #f0f4ff;
+            padding: 20px;
+            border-left: 5px solid #667eea;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .commands {
+            background: #1e1e1e;
+            color: #00ff88;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-family: Consolas, monospace;
+            line-height: 1.8;
+            overflow-x: auto;
+        }
+
+        button {
+            display: block;
+            margin: 25px auto 10px;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 10px;
+            background: #667eea;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #4f63c7;
+            transform: scale(1.05);
+        }
+
+        #message {
+            text-align: center;
+            font-weight: bold;
+            color: green;
+            min-height: 25px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Веб-жобаның синхрондалуы</h1>
+
+        <p style="text-align: center;">
+            Git және GitHub арқылы Local және Remote жобаларды синхрондау
+        </p>
+
+        <div class="info">
+            <h2>Жоба туралы</h2>
+
+            <p>
+                Бұл веб-жоба GitHub-пен жұмыс істеуді,
+                Local Repository және Remote Repository арасындағы
+                байланысты үйренуге арналған.
+            </p>
+
+            <p>
+                <strong>Local → Remote:</strong>
+                git add → git commit → git push
+            </p>
+
+            <p>
+                <strong>Remote → Local:</strong>
+                git fetch / git pull
+            </p>
+        </div>
+
+        <h2>Git негізгі командалары</h2>
+
+        <div class="commands">
+            git status<br>
+            git add .<br>
+            git commit -m "Өзгеріс енгізілді"<br>
+            git push<br>
+            git pull<br>
+            git fetch
+        </div>
+
+        <h2>Синхрондау тәртібі</h2>
+
+        <div class="commands">
+            1. git pull<br>
+            2. Файлдарды өзгерту<br>
+            3. git status<br>
+            4. git add .<br>
+            5. git commit -m "Сайт жаңартылды"<br>
+            6. git push
+        </div>
+
+        <button onclick="showMessage()">
+            Синхрондауды тексеру
+        </button>
+
+        <p id="message"></p>
+
+        <div class="info">
+            <h2>Merge Conflict</h2>
+
+            <p>
+                Егер екі адам бір файлдың бір бөлігін әртүрлі өзгертсе,
+                Merge Conflict пайда болуы мүмкін.
+            </p>
+
+            <p>
+                Мұндай жағдайда конфликтті қолмен шешіп,
+                кейін қайтадан add, commit және push командаларын орындау қажет.
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>Практикалық жұмыс №3.1.28</p>
+            <p>GitHub Web Sync Practice</p>
+        </div>
+
+    </div>
+
+    <script>
+        function showMessage() {
+            const message = document.getElementById("message");
+
+            message.textContent =
+                "✓ Жоба GitHub арқылы синхрондауға дайын!";
+
+            message.style.color = "green";
+        }
+    </script>
+
+</body>
+</html>
+```
